@@ -75,7 +75,7 @@ public class PosDao {
                 + "INNER JOIN meal_dining md ON find_in_set(md.dining_code, cc.def1) "
                 + "WHERE cc.pk_card = ? "
 //                + "AND now() BETWEEN md.begin_time AND md.end_time "
-                + "AND SUBSTR(NOW(),12,8) BETWEEN md.begin_time"
+                + "AND SUBSTR(NOW(),12,8) BETWEEN md.begin_time AND md.end_time "
                 + "AND EXISTS ("
                 + "SELECT mdv.pk_device FROM meal_device mdv "
                 + "WHERE mdv.device_code = ? "
